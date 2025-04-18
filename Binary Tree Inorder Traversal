@@ -1,0 +1,14 @@
+class Solution {
+    List<Integer> ans = new ArrayList<>();
+    void recc(TreeNode root){
+        if(root==null) return;
+
+        recc(root.left);
+        if(root!=null) ans.add(root.val);
+        recc(root.right);
+    }
+    public List<Integer> inorderTraversal(TreeNode root) {
+        recc(root);
+        return ans;
+    }
+}
